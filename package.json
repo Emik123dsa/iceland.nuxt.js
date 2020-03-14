@@ -1,0 +1,22 @@
+{
+  "name": "emik123dsa.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emik123dsa/Emik123dsa.github.io.git"
+  },
+  "author": "emil shari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emik123dsa/Emik123dsa.github.io/issues"
+  },
+  "homepage": "https://github.com/Emik123dsa/Emik123dsa.github.io#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
