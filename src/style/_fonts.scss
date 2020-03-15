@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Montserrat Regular';
+    src: url('../fonts/Montserrat-Regular.eot');
+    src: url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Montserrat-Regular.woff') format('woff'),
+    url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat Hairline';
+    src: url('../fonts/MontserratHair.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin regular 
+{
+    font-family: 'Montserrat Regular';
+}
+
+@mixin title 
+{
+    font-family: 'Montserrat Hairline';
+}

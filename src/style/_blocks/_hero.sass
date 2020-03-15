@@ -1,0 +1,52 @@
+.hero
+    //position: relative
+    &-background 
+        background: url('../img/background-hero.png') 
+        position: absolute 
+        background-repeat: no-repeat
+        background-position: left top
+        top: 0 
+        opacity: 1
+        background-size: cover 
+        left: 0
+        z-index: -1
+        width: 100%
+        height: 897px
+    &_wrap_header
+        width: 400px
+        margin-top: 10em
+    &_wrap_header_description
+        +regular
+        text-align: center
+        position: relative
+        font-size: 12px 
+        font-weight: 900
+        margin-top: 25px
+        text-transform: uppercase
+    &_wrap_subtitle
+        font-size: 16px
+        +hero
+        font-weight: 800
+        text-transform: uppercase
+    &_wrap_iceland
+        position: relative
+    &_wrap_iceland::before
+        content: ''
+        width: 105px 
+        height: 2px 
+        border-radius: 50px  
+        background: rgba(44, 62, 80,.5)
+        top: 50%
+        left: 50%
+        transform: translateX(-175%)
+        position: absolute
+    &_wrap_iceland::after
+        content: ''
+        width: 105px 
+        height: 2px 
+        border-radius: 50px  
+        background: rgba(44, 62, 80,.5)  
+        top: 50%
+        left: 50%
+        transform: translateX(75%)
+        position: absolute

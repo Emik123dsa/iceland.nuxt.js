@@ -1,0 +1,64 @@
+.navbar
+    position: relative
+    &_wrap_body_ul
+        display: flex 
+        align-items: center 
+    &_link_menu
+        font-size: 12px
+        margin: 0 15px
+        font-weight: 800
+        +regular 
+        text-transform: uppercase 
+    &_wrap
+        position: relative
+        min-height: 80px
+        display: flex 
+        align-items: center
+        justify-content: space-between
+    &::before 
+        bottom: 0
+        width: 100% 
+        left: 0
+        height: 1px 
+        background: #232323
+        content: ''
+        opacity: 0.2
+        position: absolute
+    &_wrap_body 
+        display: flex 
+        align-items: center
+    &_wrap_body_features
+        display: flex
+        //justify-content: center 
+        align-items: center
+    &_link_menu 
+        position: relative
+        transition: 0.2s ease
+    &_link_menu::before
+        transition: 0.2s ease
+        bottom: -32px
+        width: 0
+        content: ''
+        height: 3px 
+        transform: scale(0)
+        opacity: 0 
+        transform-origin: left center
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        position: absolute
+        background: rgba(44, 62, 80,.5)
+    &_link_menu:hover::before
+        transition: 0.2s ease
+        bottom: -32px
+        width: 100%
+        content: ''
+        opacity: 1
+        transform: scale(1)
+        transform-origin: left center
+        height: 3px 
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        position: absolute
+        background: rgba(44, 62, 80,.9) 
+
+    
