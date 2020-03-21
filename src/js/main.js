@@ -2,8 +2,8 @@
     var method = {
         search: document.querySelector('.search-input'),
         delta: document.querySelector('.label-input div'),
-        button: document.querySelector('.button-submit'),
-        span: document.querySelector('.button-submit span'),
+        button: document.querySelectorAll('.button-submit'),
+        span: document.querySelectorAll('.button-submit span'),
         form: document.querySelectorAll('.hero_wrap_header_form'),
         active: 'active',
         button_active: 'submit-active'
@@ -35,30 +35,39 @@
 
     });
    
+    Array.prototype.forEach.call(method.button, function(e) { 
+        
+        e.addEventListener('click', (func)=> {
+            func.preventDefault();
+    
+            var mValue = Math.max(func.clientX, func.clientY); 
+    
+            var getFeature = e.getBoundingClientRect(); 
 
-    method.button.addEventListener('click', (e)=> {
-        e.preventDefault();
+            setTimeout(function() {
+                    e.lastElementChild.style.width=`110px`; 
+                    e.lastElementChild.style.height = `110px`;
+                    e.lastElementChild.style.transform=`translate(-50%, -50%) scale(2)`;
+                    e.lastElementChild.style.opacity="0";
+                    e.lastElementChild.style.transition="0.4s ease";
+                    e.lastElementChild.style.zIndex="2";
+            }, 30);
 
-        var mValue = Math.max(method.button.clientX, method.button.clientY); 
+                e.lastElementChild.style.zIndex="-2";
 
-        var getFeature = method.button.getBoundingClientRect();
-        setTimeout(function() {
-            method.span.style.width=`110px`; 
-            method.span.style.height = `110px`;
-            method.span.style.transform=`translate(-50%, -50%) scale(2)`;
-            method.span.style.opacity="0";
-            method.span.style.transition="0.4s ease";
-            method.span.style.zIndex="2";
-        }, 30);
-        method.span.style.zIndex="-2";
-        method.span.style.left = `${e.clientX - getFeature.left}px`;
-        method.span.style.top = `${e.clientY - getFeature.top}px`;
-        method.span.style.transition="0s";
-        method.span.style.transform=`translate(-50%, -50%)`;
-        method.span.style.width=`0px`; 
-        method.span.style.height = `0px`;
-        method.span.style.opacity="1";
-    });
+                e.lastElementChild.style.left = `${func.clientX - getFeature.left}px`;
+                e.lastElementChild.style.top = `${func.clientY - getFeature.top}px`;
+                
+                e.lastElementChild.style.transition="0s";
+
+                e.lastElementChild.style.transform=`translate(-50%, -50%)`;
+                e.lastElementChild.style.width=`0px`; 
+                e.lastElementChild.style.height = `0px`;
+                e.lastElementChild.style.opacity="1";
+           
+           
+        });
+    }); 
 
     if ((typeof method.search.value !== 'string')) 
     {
