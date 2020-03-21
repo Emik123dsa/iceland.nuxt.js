@@ -5,7 +5,9 @@ var gulp = require('gulp'),
     clean = require('gulp-clean-css'), 
     autoprefixer = require('gulp-autoprefixer'), 
     watch = require('gulp-watch'), 
-    uglify = require('gulp-uglify'), 
+    uglify = require('gulp-uglifyes'), 
+    plumber = require('gulp-plumber'), 
+    plumberNotifier = require('gulp-plumber-notifier'),
     browserSync = require('browser-sync'),
     sourcemaps = require('gulp-sourcemaps'), 
     fileinclude = require('gulp-file-include'), 
@@ -41,7 +43,7 @@ const project =
     {
         html: './build/', 
         css: './build/css/', 
-        js: './build/img/', 
+        js: './build/js/', 
         fonts: './build/fonts/',
         img: './build/img/',
         vendor_css: './build/vendor/css/', 
@@ -77,8 +79,15 @@ gulp.task('style:build', (done) => {
 gulp.task('js:build', (done) => 
 {
     gulp.src(project.watch.js)
-        .pipe(uglify().on('error', uglify.logError))
-        .pipe(dest(project.build.js))
+        .pipe(plumberNotifier())
+        .pipe(sourcemaps.init())
+        .pipe(uglify({
+            mangle: false, 
+            ecma: 6
+        }))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(project.build.js)) 
+        .pipe(livereload());
     done();
 });
 

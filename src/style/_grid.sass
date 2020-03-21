@@ -92,3 +92,45 @@ h1, h2, h3, h4, h5, h6
 
 
     
+.search-input
+    border: 1px solid transparent 
+    transition: 0.2s ease 
+    padding: 12px 25px
+    border-radius: 7px
+    outline: none
+    z-index: 2
+    +regular
+    position: relative
+
+.search-input:focus 
+    transition: 0.2s ease 
+    border: 1px solid #bdc3c7
+
+.label-input
+    z-index: 500
+    border: none 
+    overflow: hidden
+    text-overflow: ellipsis 
+    border-radius: 25px
+    position: relative
+
+.label-input div
+    z-index: 3
+    +regular
+    font-weight: 500
+    left: 25px
+    overflow: hidden
+    text-overflow: ellipsis
+    user-select: none 
+    white-space: nowrap 
+    pointer-events: none
+    top: 50% 
+    transform: translateY(-50%) 
+    position: absolute
+    transition: 0.1s ease
+
+.label-input .active
+    left: 25px
+    transition: 0.1s ease
+    font-size: 9px 
+    transform: translateY(-200%)
