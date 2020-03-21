@@ -8,6 +8,22 @@
     font-style: normal;
 }
 
+@font-face 
+{
+    font-family: 'SpecialElite'; 
+    src: url('../fonts/SpecialElite.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face 
+{
+    font-family: 'Painter'; 
+    src: url('../fonts/Painter.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @font-face {
     font-family: 'Montserrat Hairline';
     src: url('../fonts/MontserratHair.ttf') format('truetype');
@@ -23,4 +39,29 @@
 @mixin title 
 {
     font-family: 'Montserrat Hairline';
+}
+
+@mixin special
+{
+    font-family: 'SpecialElite'; 
+}
+
+@mixin painter 
+{
+    font-family: 'Painter';
+}
+
+@font-face {
+    font-family: 'Proxima Nova Regular';
+    src: url('../fonts/ProximaNova-Regular.eot');
+    src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ProximaNova-Regular.woff') format('woff'),
+    url('../fonts/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+@mixin proxima 
+{
+    font-family: 'Proxima Nova Regular';
 }
