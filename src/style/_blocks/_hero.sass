@@ -51,6 +51,7 @@
         transform: translateX(75%)
         position: absolute
     &_wrap 
+        position: relative
         margin-top: 10em
         display: flex  
         justify-content: space-around 
@@ -58,17 +59,17 @@
         flex-basis: 100%
         align-items: center
     &_wrap_header_form  
-        background: #ffffff
+        background: rgba(255, 255, 255, 0.4)
         height: 100%
         box-shadow: 0px 0px 6px#bdc3c7
         position: relative
         //border: 1px solid #bdc3c7 
         border-radius: 7px 
     &_wrap_form
-        padding: 25px
+        padding: 25px 25px
         text-align: center
     &_wrap_header_form_title_name 
-        width: 150px 
+        width: 200px 
         font-weight: 800
         text-align: center 
         margin: 0 auto 
@@ -77,6 +78,25 @@
         font-size: 22px 
     &_wrap_header_form_title 
         margin-bottom: 25px
-
+    &_wrap_header_form_img 
+        margin-bottom: -10px
+        z-index: 999
+        background: url('../img/ice.svg')
+        padding: 25px
+        position: relative
+        background-position: bottom center 
+        background-repeat: no-repeat 
+        background-size: contain 
+    &_wrap_header_form_img::before 
+        position: absolute
+        content: ''
+        width: 45px 
+        z-index: 9999
+        left: 50% 
+        transform: translateX(-50%)
+        bottom: -55px
+        height: 1px 
+        background: rgba(52, 73, 94,.5)
+        border-radius: 50%
 
         
